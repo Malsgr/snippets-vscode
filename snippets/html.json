@@ -1,0 +1,22 @@
+{
+    "Form HTTP POST": {
+        "prefix": "form-http",
+        "body": "<form action=\"${1:url}\" method=\"${2|GET,POST|}\">\n    <fieldset>\n        <legend>${3:Título del formulario}</legend>\n        \n        <label for=\"${4:campo1}\">${5:Etiqueta 1}:</label>\n        <input type=\"${6|text,email,password,number,date|}\" id=\"${4:campo1}\" name=\"${4:campo1}\" ${7|required,|}>\n        \n        <label for=\"${8:campo2}\">${9:Etiqueta 2}:</label>\n        <textarea id=\"${8:campo2}\" name=\"${8:campo2}\" rows=\"4\"></textarea>\n        \n        <button type=\"submit\">${10:Enviar}</button>\n    </fieldset>\n</form>",
+        "description": "Formulario HTML con action y method"
+    },
+    "Form Fetch": {
+        "prefix": "form",
+        "body": "<form id=\"${1:form-id}\">\n    <fieldset>\n        <legend>${2:Título del formulario}</legend>\n        \n        <label for=\"${3:campo1}\">${4:Etiqueta 1}:</label>\n        <input type=\"${5|text,email,password,number,date|}\" id=\"${3:campo1}\" name=\"${3:campo1}\" ${6|required,|}>\n        \n        <label for=\"${7:campo2}\">${8:Etiqueta 2}:</label>\n        <textarea id=\"${7:campo2}\" name=\"${7:campo2}\" rows=\"4\"></textarea>\n        \n        <button type=\"submit\">${9:Enviar}</button>\n    </fieldset>\n</form>\n\n<script>\ndocument.getElementById('${1:form-id}').addEventListener('submit', async (e) => {\n    e.preventDefault();\n    const formData = new FormData(e.target);\n    const data = Object.fromEntries(formData);\n    \n    const response = await fetch('${10:url}', {\n        method: 'POST',\n        headers: { 'Content-Type': 'application/json' },\n        body: JSON.stringify(data)\n    });\n    \n    const result = await response.json();\n    console.log(result);\n});\n</script>",
+        "description": "Formulario básico para enviar con fetch"
+    },
+    "Table": {
+        "prefix": "table",
+        "body": "<table>\n    <thead>\n        <tr>\n            <th>${1:Columna 1}</th>\n            <th>${2:Columna 2}</th>\n            <th>${3:Columna 3}</th>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>${4:Dato 1}</td>\n            <td>${5:Dato 2}</td>\n            <td>${6:Dato 3}</td>\n        </tr>\n    </tbody>\n</table>",
+        "description": "Tabla HTML con thead y tbody"
+    },
+    "Nav": {
+        "prefix": "nav",
+        "body": "<nav>\n    <ul>\n        <li><a href=\"${1:/}\">${2:Inicio}</a></li>\n        <li><a href=\"${3:/about}\">${4:Nosotros}</a></li>\n        <li><a href=\"${5:/contact}\">${6:Contacto}</a></li>\n    </ul>\n</nav>",
+        "description": "Menú de navegación"
+    }
+}

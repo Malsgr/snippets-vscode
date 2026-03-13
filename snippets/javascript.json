@@ -1,0 +1,27 @@
+{
+    "fetch GET": {
+        "prefix": "fetchGet",
+        "body": "async function fetchData(url) {\n    const response = await fetch(url);\n    const ${1|text,json|} = ${1:text:await response.text(),json:await response.json()};\n    return ${1:text,json};\n}",
+        "description": "Función fetch GET con opción text/json"
+    },
+    "fetch Body": {
+        "prefix": "fetchBody",
+        "body": "async function sendData(url, data) {\n    const response = await fetch(url, {\n        method: ${1|POST,PUT,DELETE|},\n        headers: { 'Content-Type': 'application/json' },\n        body: JSON.stringify(data)\n    });\n    const ${2|text,json|} = ${2:text:await response.text(),json:await response.json()};\n    return ${2:text,json};\n}",
+        "description": "fetch con método POST, PUT o DELETE"
+    },
+    "createElement": {
+        "prefix": "createElement",
+        "body": "const ${1:element} = document.createElement('${2:tag}');",
+        "description": "Crea un elemento del DOM"
+    },
+    "querySelector": {
+        "prefix": "querySelector",
+        "body": "const ${1:element} = document.querySelector('${2:selector}');",
+        "description": "Selecciona un elemento del DOM"
+    },
+    "addEventListener": {
+        "prefix": "addEventListener",
+        "body": "${1:element}.addEventListener('${2:click}', () => {\n    $0\n});",
+        "description": "Añade un evento a un elemento"
+    }
+}
