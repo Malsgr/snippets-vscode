@@ -6,11 +6,15 @@ Personal snippets for VSCode.
 
 ### Linux
 ```bash
+git clone https://github.com/tu-usuario/snippets-vscode.git
+cd snippets-vscode
 ./install-linux.sh
 ```
 
 ### Windows (PowerShell)
 ```powershell
+git clone https://github.com/tu-usuario/snippets-vscode.git
+cd snippets-vscode
 .\install-windows.ps1
 ```
 
