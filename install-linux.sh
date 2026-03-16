@@ -8,5 +8,6 @@ cp snippets/sql.json "$CONFIG_DIR/snippets/sql.json"
 cp snippets/html.json "$CONFIG_DIR/snippets/html.json"
 cp snippets/javascript.json "$CONFIG_DIR/snippets/javascript.json"
 cp snippets/javascript.json "$CONFIG_DIR/snippets/conectarse.json"
+cp snippets/javascript.json "$CONFIG_DIR/snippets/pagina.json"
 
 echo "Snippets installed to $CONFIG_DIR/snippets/"
