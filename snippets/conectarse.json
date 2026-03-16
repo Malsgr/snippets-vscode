@@ -1,0 +1,12 @@
+{
+    "Conectarse a MySQL": {
+        "prefix": "mysql-base",
+        "body": "mysql://usuario:password@host:3306/database",
+        "description": ""
+    },
+    "Conectarse a PostGre": {
+        "prefix": "postgre-base",
+        "body": "postgresql://usuario:password@host:5432/database",
+        "description": "CREATE TABLE para SQLite con campos modificables y elección de tipos"
+    }
+}
