@@ -1,16 +1,16 @@
 {
     "Select Basic": {
-        "prefix": "sel",
+        "prefix": "select",
         "body": "SELECT * FROM ${1:table};",
         "description": "SELECT básico con nombre de tabla modificable"
     },
     "Create Table SQLite": {
-        "prefix": "ctsqlite",
+        "prefix": "createSQLite",
         "body": "CREATE TABLE ${1:table_name} (\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    ${2:column1} ${3|TEXT,INTEGER,REAL,BLOB,NUMERIC|} ${4|NOT NULL,NULL,UNIQUE,DEFAULT,CHECK|},\n    created_at DATETIME DEFAULT CURRENT_TIMESTAMP\n);",
         "description": "CREATE TABLE para SQLite con campos modificables y elección de tipos"
     },
     "Create Table MySQL": {
-        "prefix": "ctmysql",
+        "prefix": "createMySQL",
         "body": "CREATE TABLE ${1:table_name} (\n    id INT AUTO_INCREMENT PRIMARY KEY,\n    ${2:column1} ${3|VARCHAR(255),INT,TEXT,DATE,DATETIME,TIMESTAMP|} ${4|NOT NULL,NULL,UNIQUE,DEFAULT,CHECK|},\n    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP\n);",
         "description": "CREATE TABLE para MySQL con campos modificables y elección de tipos"
     }
