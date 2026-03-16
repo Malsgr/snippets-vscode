@@ -21,9 +21,16 @@ cd snippets-vscode
 ## Snippets
 
 ### SQL
-- `sel` - SELECT básico
-- `ctsqlite` - CREATE TABLE SQLite
-- `ctmysql` - CREATE TABLE MySQL
+- `sqlcreate` - CREATE TABLE
+- `sqlselect` - SELECT básico
+- `sqlwhere` - SELECT con WHERE
+- `sqlinsert` - INSERT INTO
+- `sqlupdate` - UPDATE
+- `sqldelete` - DELETE
+- `sqljoin` - INNER JOIN
+- `sqlleftjoin` - LEFT JOIN
+- `sqlview` - CREATE VIEW
+- `sqlindex` - CREATE INDEX
 
 ### HTML
 - `form-http` - Formulario con action y method
@@ -37,3 +44,10 @@ cd snippets-vscode
 - `createElement` - Crear elemento DOM
 - `querySelector` - Seleccionar elemento
 - `addEventListener` - Añadir evento
+
+### Conexiones
+- `mysql-base` - Cadena de conexión MySQL
+- `postgre-base` - Cadena de conexión PostgreSQL
+
+### Pagina
+- `dambbdd` - Página completa de curso BBDD
