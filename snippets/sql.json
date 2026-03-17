@@ -1,122 +1,123 @@
 {
-  "SQL Create Table": {
-    "prefix": "sqlcreate",
-    "body": [
-      "CREATE TABLE ${1:table_name} (",
-      "    id ${2:INT} PRIMARY KEY${3: AUTO_INCREMENT},",
-      "    ${4:column_name} ${5:VARCHAR(255)} NOT NULL,",
-      "    ${6:created_at} TIMESTAMP DEFAULT CURRENT_TIMESTAMP",
-      ");"
-    ],
-    "description": "Create table"
-  },
-
-  "SQL Select All": {
-    "prefix": "sqlselect",
-    "body": [
-      "SELECT",
-      "    ${1:*}",
-      "FROM",
-      "    ${2:table_name};"
-    ],
-    "description": "Basic SELECT"
-  },
-
-  "SQL Select Where": {
-    "prefix": "sqlwhere",
-    "body": [
-      "SELECT",
-      "    ${1:*}",
-      "FROM",
-      "    ${2:table_name}",
-      "WHERE",
-      "    ${3:column} = ${4:value};"
-    ],
-    "description": "SELECT with WHERE"
-  },
-
-  "SQL Insert": {
-    "prefix": "sqlinsert",
-    "body": [
-      "INSERT INTO ${1:table_name} (",
-      "    ${2:column1},",
-      "    ${3:column2}",
-      ")",
-      "VALUES (",
-      "    ${4:value1},",
-      "    ${5:value2}",
-      ");"
-    ],
-    "description": "Insert row"
-  },
-
-  "SQL Update": {
-    "prefix": "sqlupdate",
-    "body": [
-      "UPDATE ${1:table_name}",
-      "SET",
-      "    ${2:column} = ${3:value}",
-      "WHERE",
-      "    ${4:id} = ${5:value};"
-    ],
-    "description": "Update row"
-  },
-
-  "SQL Delete": {
-    "prefix": "sqldelete",
-    "body": [
-      "DELETE FROM ${1:table_name}",
-      "WHERE ${2:id} = ${3:value};"
-    ],
-    "description": "Delete row"
-  },
-
-  "SQL Join": {
-    "prefix": "sqljoin",
-    "body": [
-      "SELECT",
-      "    ${1:a.*},",
-      "    ${2:b.*}",
-      "FROM ${3:table_a} a",
-      "INNER JOIN ${4:table_b} b",
-      "ON a.${5:id} = b.${6:foreign_id};"
-    ],
-    "description": "Inner Join"
-  },
-
-  "SQL Left Join": {
-    "prefix": "sqlleftjoin",
-    "body": [
-      "SELECT",
-      "    ${1:a.*},",
-      "    ${2:b.*}",
-      "FROM ${3:table_a} a",
-      "LEFT JOIN ${4:table_b} b",
-      "ON a.${5:id} = b.${6:foreign_id};"
-    ],
-    "description": "Left Join"
-  },
-
-  "SQL Create View": {
-    "prefix": "sqlview",
-    "body": [
-      "CREATE VIEW ${1:view_name} AS",
-      "SELECT",
-      "    ${2:*}",
-      "FROM",
-      "    ${3:table_name}",
-      "WHERE",
-      "    ${4:condition};"
-    ],
-    "description": "Create View"
-  },
-
-  "SQL Create Index": {
-    "prefix": "sqlindex",
-    "body": [
-      "CREATE INDEX ${1:index_name}",
-      "ON ${2:table_name} (${3:column});"
-    ],
-    "description": "Create index"
-  }
+    "SQL Create Table": {
+        "prefix": "sqlcreate",
+        "body": [
+            "CREATE TABLE ${1:table_name} (",
+            "    id ${2:INT} PRIMARY KEY${3: AUTO_INCREMENT},",
+            "    ${4:column_name} ${5:VARCHAR(255)} NOT NULL,",
+            "    ${6:created_at} TIMESTAMP DEFAULT CURRENT_TIMESTAMP",
+            ");"
+        ],
+        "description": "Create table",
+        "scope": "sql"
+    },
+    "SQL Select All": {
+        "prefix": "sqlselect",
+        "body": [
+            "SELECT",
+            "    ${1:*}",
+            "FROM",
+            "    ${2:table_name};"
+        ],
+        "description": "Basic SELECT",
+        "scope": "sql"
+    },
+    "SQL Select Where": {
+        "prefix": "sqlwhere",
+        "body": [
+            "SELECT",
+            "    ${1:*}",
+            "FROM",
+            "    ${2:table_name}",
+            "WHERE",
+            "    ${3:column} = ${4:value};"
+        ],
+        "description": "SELECT with WHERE",
+        "scope": "sql"
+    },
+    "SQL Insert": {
+        "prefix": "sqlinsert",
+        "body": [
+            "INSERT INTO ${1:table_name} (",
+            "    ${2:column1},",
+            "    ${3:column2}",
+            ")",
+            "VALUES (",
+            "    ${4:value1},",
+            "    ${5:value2}",
+            ");"
+        ],
+        "description": "Insert row",
+        "scope": "sql"
+    },
+    "SQL Update": {
+        "prefix": "sqlupdate",
+        "body": [
+            "UPDATE ${1:table_name}",
+            "SET",
+            "    ${2:column} = ${3:value}",
+            "WHERE",
+            "    ${4:id} = ${5:value};"
+        ],
+        "description": "Update row",
+        "scope": "sql"
+    },
+    "SQL Delete": {
+        "prefix": "sqldelete",
+        "body": [
+            "DELETE FROM ${1:table_name}",
+            "WHERE ${2:id} = ${3:value};"
+        ],
+        "description": "Delete row",
+        "scope": "sql"
+    },
+    "SQL Join": {
+        "prefix": "sqljoin",
+        "body": [
+            "SELECT",
+            "    ${1:a.*},",
+            "    ${2:b.*}",
+            "FROM ${3:table_a} a",
+            "INNER JOIN ${4:table_b} b",
+            "ON a.${5:id} = b.${6:foreign_id};"
+        ],
+        "description": "Inner Join",
+        "scope": "sql"
+    },
+    "SQL Left Join": {
+        "prefix": "sqlleftjoin",
+        "body": [
+            "SELECT",
+            "    ${1:a.*},",
+            "    ${2:b.*}",
+            "FROM ${3:table_a} a",
+            "LEFT JOIN ${4:table_b} b",
+            "ON a.${5:id} = b.${6:foreign_id};"
+        ],
+        "description": "Left Join",
+        "scope": "sql"
+    },
+    "SQL Create View": {
+        "prefix": "sqlview",
+        "body": [
+            "CREATE VIEW ${1:view_name} AS",
+            "SELECT",
+            "    ${2:*}",
+            "FROM",
+            "    ${3:table_name}",
+            "WHERE",
+            "    ${4:condition};"
+        ],
+        "description": "Create View",
+        "scope": "sql"
+    },
+    "SQL Create Index": {
+        "prefix": "sqlindex",
+        "body": [
+            "CREATE INDEX ${1:index_name}",
+            "ON ${2:table_name} (${3:column});"
+        ],
+        "description": "Create index",
+        "scope": "sql"
+    }
 }
