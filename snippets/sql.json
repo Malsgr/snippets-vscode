@@ -119,5 +119,52 @@
         ],
         "description": "Create index",
         "scope": "sql"
+    },
+
+    
+    "MySQL Dockerfile": {
+        "prefix": "mysqldocker",
+        "body": [
+            "FROM mysql:latest",
+            "",
+            "# Variables de entorno (ajústalas a tu gusto)",
+            "ENV MYSQL_ROOT_PASSWORD=${1:pass1234}",
+            "ENV MYSQL_DATABASE=${2:mydb}",
+            "ENV MYSQL_USER=${3:diego}",
+            "ENV MYSQL_PASSWORD=${4:secret1234}",
+            "",
+            "# Copia el script de inicialización al directorio de entrada de MySQL",
+            "COPY init.sql /docker-entrypoint-initdb.d/",
+            "",
+            "# Copia el archivo de configuración personalizado",
+            "COPY mysqld.cnf /etc/mysql/mysql.conf.d/mysqld.cnf",
+            "",
+            "# Exponer el puerto 3306",
+            "EXPOSE 3306"
+        ],
+        "description": "MySQL Dockerfile",
+        "scope": "sql"
+    },
+    "MySQL Docker Compose": {
+        "prefix": "mysqldcompose",
+        "body": [
+            "version: '3.8'",
+            "services:",
+            "  mysql:",
+            "    image: mysql:latest",
+            "    container_name: ${1:mysql-test}",
+            "    environment:",
+            "      MYSQL_ROOT_PASSWORD: ${2:pass1234}",
+            "      MYSQL_DATABASE: ${3:mydb}",
+            "      MYSQL_USER: ${4:diego}",
+            "      MYSQL_PASSWORD: ${5:secret1234}",
+            "    ports:",
+            "      - \"3306:3306\"",
+            "    volumes:",
+            "      - ./mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf",
+            "      - ./init.sql:/docker-entrypoint-initdb.d/init.sql"
+        ],
+        "description": "MySQL Docker Compose",
+        "scope": "sql"
     }
 }
