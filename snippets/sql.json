@@ -11,40 +11,6 @@
         "description": "Create table",
         "scope": "sql"
     },
-
-    "SQL Select All": {
-        "prefix": "postgrefunction",
-        "body": [
-            "CREATE OR REPLACE FUNCTION buscar_por_letra(letra TEXT)",
-            "RETURNS TABLE(",
-            "    id INTEGER,",
-            "    nombre TEXT,",
-            "    dimension TEXT,",
-            "    clasificacion TEXT,",
-            "    tipo TEXT",
-            ") AS $$",
-            "BEGIN",
-            "    RETURN QUERY",
-            "    SELECT",
-            "        ai.id,",
-            "        i.nombre,",
-            "        d.dimension,",
-            "        c.clasificacion,",
-            "        t.tipo",
-            "    FROM all_items ai",
-            "    JOIN items i ON ai.nombre_id = i.id",
-            "    JOIN dimensiones d ON ai.dimension_id = d.id",
-            "    JOIN clasificacion c ON ai.clasificacion_id = c.id",
-            "    JOIN tipos_de_items t ON ai.tipo_id = t.id",
-            "    WHERE LOWER(i.nombre) LIKE LOWER(letra) || '%';",
-            "END;",
-            "$$ LANGUAGE plpgsql;",
-        ],
-        "description": "Funcion postgre",
-        "scope": "sql"
-    },
-
-    
     "SQL Select All": {
         "prefix": "sqlselect",
         "body": [
